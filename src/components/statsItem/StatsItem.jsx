@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { Item, Label, Quantity } from './statsItemStyles';
+import PropTypes from 'prop-types';
 
 const StatsItem = props => {
   return (
@@ -8,22 +9,9 @@ const StatsItem = props => {
     </Item>
   );
 };
+
+StatsItem.propTypes = {
+  label: PropTypes.string,
+  quantity: PropTypes.number,
+};
 export default StatsItem;
-
-const Item = styled.li`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  text-align: center;
-  border-left: 2px solid grey;
-  color: black;
-  padding: 15px;
-`;
-const Label = styled.span`
-  font-size: 16px;
-`;
-
-const Quantity = styled.span`
-  font-size: 20px;
-  font-weight: bold;
-`;
