@@ -5,9 +5,12 @@ const Item = styled.li`
   width: 100%;
   flex-direction: column;
   text-align: center;
-  border-left: 2px solid grey;
+
   color: black;
   padding: 15px;
+  &:not(:first-child) {
+    border-left: 2px solid grey;
+  }
 `;
 const Label = styled.span`
   font-size: 16px;

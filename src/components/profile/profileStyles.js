@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const Wraper = styled.div`
   width: 400px;
   display: block;
-  margin: 0 auto;
+  margin: 50px auto;
+
   border: 2px solid #9e9a9a;
   border-radius: 8px;
 `;

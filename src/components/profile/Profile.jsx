@@ -10,8 +10,9 @@ import {
 import PropTypes from 'prop-types';
 
 const Profile = props => {
-  const stats = Object.keys(props.stats);
-  const values = Object.values(props.stats);
+  // const stats = Object.keys(props.stats);
+  // const values = Object.values(props.stats);
+  const data = Object.entries(props.stats);
 
   return (
     <Wraper>
@@ -23,9 +24,13 @@ const Profile = props => {
       </div>
 
       <StatsList>
-        <StatsItem label={stats[0]} quantity={values[0]} />
+        {data.map((item, index) => (
+          <StatsItem key={index + item[0]} label={item[0]} quantity={item[1]} />
+        ))}
+
+        {/* <StatsItem label={stats[0]} quantity={values[0]} />
         <StatsItem label={stats[1]} quantity={values[1]} />
-        <StatsItem label={stats[2]} quantity={values[2]} />
+        <StatsItem label={stats[2]} quantity={values[2]} /> */}
       </StatsList>
     </Wraper>
   );
