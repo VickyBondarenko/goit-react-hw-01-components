@@ -6,7 +6,6 @@ import user from '../json/user.json';
 import data from '../json/data.json';
 import friends from '../json/friends.json';
 import transactions from '../json/transactions.json';
-<json />;
 
 export const App = () => {
   return (

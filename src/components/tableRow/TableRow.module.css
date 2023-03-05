@@ -1,0 +1,14 @@
+.tableCell {
+  padding: 8px;
+  border-color: transparent;
+}
+
+.row {
+  height: 25px;
+  font-size: 14px;
+  font-weight: 100;
+  font-style: normal;
+}
+.row:nth-child(even) {
+  background-color: #9e9a9a4b;
+}

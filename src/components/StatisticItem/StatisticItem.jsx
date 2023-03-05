@@ -11,6 +11,7 @@ const StatisticItem = props => {
 };
 
 StatisticItem.propTypes = {
+  id: PropTypes.string,
   label: PropTypes.string,
   quantity: PropTypes.number,
 };

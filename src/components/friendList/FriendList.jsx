@@ -1,9 +1,11 @@
 import FriendItem from 'components/friendItem/FriendItem';
+import css from './FriendList.module.css';
+import PropTypes from 'prop-types';
 
 const FriendList = props => {
   const data = props.friends;
   return (
-    <ul className="friend-list">
+    <ul className={css.friendList}>
       {data.map(item => (
         <FriendItem
           key={item.id}
@@ -14,5 +16,9 @@ const FriendList = props => {
       ))}
     </ul>
   );
+};
+
+FriendList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 export default FriendList;

@@ -1,5 +1,6 @@
 import { Statistica, Title, StatList } from './statisticStyle';
 import StatItem from 'components/StatisticItem/StatisticItem';
+import PropTypes from 'prop-types';
 
 const Statistics = props => {
   const data = props.stats;
@@ -17,25 +18,11 @@ const Statistics = props => {
             quantity={item.percentage}
           />
         ))}
-        {/* <li class="item">
-          <span class="label">.docx</span>
-          <span class="percentage">4%</span>
-        </li>
-        <li class="item">
-          <span class="label">.mp3</span>
-          <span class="percentage">14%</span>
-        </li>
-        <li class="item">
-          <span class="label">.pdf</span>
-          <span class="percentage">41%</span>
-        </li>
-        <li class="item">
-          <span class="label">.mp4</span>
-          <span class="percentage">12%</span>
-        </li> */}
       </StatList>
     </Statistica>
   );
 };
-
+Statistics.propTypes = {
+  stats: PropTypes.arrayOf(PropTypes.object),
+};
 export default Statistics;

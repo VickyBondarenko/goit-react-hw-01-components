@@ -1,11 +1,12 @@
 import TableRow from 'components/tableRow/TableRow';
+import css from './TransactionHistory.module.css';
+import PropTypes from 'prop-types';
 
 const TransactionHistory = props => {
   const data = props.items;
-  console.log(data);
   return (
-    <table className="transaction-history">
-      <thead>
+    <table className={css.transactionHistory}>
+      <thead className={css.headRow}>
         <TableRow type={'TYPE'} amount={'AMOUNT'} currency={'CURRENCY'} />
       </thead>
       <tbody>
@@ -22,4 +23,7 @@ const TransactionHistory = props => {
   );
 };
 
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+};
 export default TransactionHistory;
