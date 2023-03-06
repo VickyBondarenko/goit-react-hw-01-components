@@ -2,17 +2,14 @@ import { Statistica, Title, StatList } from './statisticStyle';
 import StatItem from 'components/StatisticItem/StatisticItem';
 import PropTypes from 'prop-types';
 
-const Statistics = props => {
-  const data = props.stats;
-
+const Statistics = ({ title, stats }) => {
   return (
     <Statistica>
-      <Title>{props.title}</Title>
+      {{ title } && <Title>{title}</Title>}
 
       <StatList>
-        {data.map(item => (
+        {stats.map(item => (
           <StatItem
-            id={item.id}
             key={item.id}
             label={item.label}
             quantity={item.percentage}
@@ -22,7 +19,10 @@ const Statistics = props => {
     </Statistica>
   );
 };
+
 Statistics.propTypes = {
-  stats: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
 export default Statistics;

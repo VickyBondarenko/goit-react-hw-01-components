@@ -9,39 +9,33 @@ import {
 } from './profileStyles';
 import PropTypes from 'prop-types';
 
-const Profile = props => {
-  // const stats = Object.keys(props.stats);
-  // const values = Object.values(props.stats);
-  const data = Object.entries(props.stats);
+const Profile = ({ stats, avatar, username, tag, location }) => {
+  const data = Object.entries(stats);
 
   return (
     <Wraper>
       <div>
-        <Avatar src={props.avatar} alt="User avatar" />
-        <Name>{props.username}</Name>
-        <Tag>@{props.tag}</Tag>
-        <Location>{props.location}</Location>
+        <Avatar src={avatar} alt="User avatar" />
+        <Name>{username}</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
       </div>
 
       <StatsList>
         {data.map((item, index) => (
           <StatsItem key={index + item[0]} label={item[0]} quantity={item[1]} />
         ))}
-
-        {/* <StatsItem label={stats[0]} quantity={values[0]} />
-        <StatsItem label={stats[1]} quantity={values[1]} />
-        <StatsItem label={stats[2]} quantity={values[2]} /> */}
       </StatsList>
     </Wraper>
   );
 };
 
 Profile.propTypes = {
-  avatar: PropTypes.string,
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  stats: PropTypes.object,
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.object.isRequired,
 };
 
 export default Profile;

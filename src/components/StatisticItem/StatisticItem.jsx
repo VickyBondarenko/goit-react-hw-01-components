@@ -1,18 +1,18 @@
 import { ItemStat, LabelStat, QuantityStat } from './statisticItemStyle';
 import PropTypes from 'prop-types';
 
-const StatisticItem = props => {
+const StatisticItem = ({ label, quantity }) => {
   return (
-    <ItemStat id={props.id}>
-      <LabelStat>{props.label}</LabelStat>
-      <QuantityStat>{props.quantity}%</QuantityStat>
+    <ItemStat>
+      <LabelStat>{label}</LabelStat>
+      <QuantityStat>{quantity}%</QuantityStat>
     </ItemStat>
   );
 };
 
 StatisticItem.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string,
-  quantity: PropTypes.number,
+  label: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
+
 export default StatisticItem;

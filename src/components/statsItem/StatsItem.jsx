@@ -1,17 +1,18 @@
 import { Item, Label, Quantity } from './statsItemStyles';
 import PropTypes from 'prop-types';
 
-const StatsItem = props => {
+const StatsItem = ({ label, quantity }) => {
   return (
     <Item>
-      <Label>{props.label}</Label>
-      <Quantity>{props.quantity}</Quantity>
+      <Label>{label}</Label>
+      <Quantity>{quantity}</Quantity>
     </Item>
   );
 };
 
 StatsItem.propTypes = {
-  label: PropTypes.string,
-  quantity: PropTypes.number,
+  label: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
+
 export default StatsItem;
