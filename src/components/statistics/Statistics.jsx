@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Statistics = ({ title, stats }) => {
   return (
     <Statistica>
-      {{ title } && <Title>{title}</Title>}
+      {title && <Title>{title}</Title>}
 
       <StatList>
         {stats.map(item => (
